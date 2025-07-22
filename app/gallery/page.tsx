@@ -4,31 +4,32 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-
+import { sanityClient } from "../lib/sanity";
+import { urlFor } from "../lib/imageUrl";
 
 type GalleryImage = {
   _id: string;
   alt: string;
-  image: any; // You can further type this with Sanity's image schema
+  image: any;
 };
 
 export default function Gallery() {
   const [images, setImages] = useState<GalleryImage[]>([]);
   const [modalIndex, setModalIndex] = useState<number | null>(null);
 
-//   useEffect(() => {
-//     const fetchImages = async () => {
-//       const data = await sanityClient.fetch<GalleryImage[]>(
-//         `*[_type == "galleryImage"] | order(_createdAt desc) {
-//           _id,
-//           alt,
-//           image
-//         }`
-//       );
-//       setImages(data);
-//     };
-//     fetchImages();
-//   }, []);
+  useEffect(() => {
+    const fetchImages = async () => {
+      const data = await sanityClient.fetch<GalleryImage[]>(
+        `*[_type == "galleryImage"] | order(_createdAt desc) {
+          _id,
+          alt,
+          image
+        }`
+      );
+      setImages(data);
+    };
+    fetchImages();
+  }, []);
 
   const openModal = (index: number) => setModalIndex(index);
   const closeModal = () => setModalIndex(null);
@@ -48,14 +49,14 @@ export default function Gallery() {
               className="relative block w-full rounded-lg overflow-hidden shadow-md hover:shadow-xl transition"
               aria-label={`Open image: ${img.alt}`}
             >
-              {/* <Image
+              <Image
                 src={urlFor(img.image).width(400).height(300).url()}
                 alt={img.alt}
                 width={400}
                 height={300}
                 className="object-cover w-full h-60"
                 loading="lazy"
-              /> */}
+              />
             </button>
           ))}
         </div>
@@ -77,13 +78,13 @@ export default function Gallery() {
           >
             &times;
           </button>
-          {/* <Image
+          <Image
             src={urlFor(images[modalIndex].image).width(800).height(600).url()}
             alt={images[modalIndex].alt}
             width={800}
             height={600}
-            className="rounded-lg shadow-lg"
-          /> */}
+            className="rounded-lg shadow-lg max-h-[80vh] object-contain"
+          />
         </div>
       )}
 
