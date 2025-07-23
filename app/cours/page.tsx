@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer'
+import NewsSection from '../components/NewsSection'
 
 export default function Cours() {
     return (
@@ -72,33 +73,7 @@ export default function Cours() {
 
 
             </section>
-            <section className="bg-white text-gray-900 py-16 px-6" id="news">
-                <div className="max-w-6xl mx-auto">
-                    <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12">Actualités</h2>
-                    <div className="grid md:grid-cols-3 gap-8">
-                        {[1, 2, 3].map((i) => (
-                            <article
-                                key={i}
-                                className="bg-gray-100 rounded-xl shadow-md p-6 hover:shadow-lg transition"
-                            >
-                                <h3 className="text-xl font-semibold mb-2">
-                                    Titre de l'actualité {i}
-                                </h3>
-                                <p className="text-sm text-gray-700">
-                                    Résumé de l’article ou annonce importante. Peut contenir des
-                                    infos sur les événements, compétitions ou stages.
-                                </p>
-                                <a
-                                    href="#"
-                                    className="inline-block mt-4 text-blue-500 hover:underline font-medium"
-                                >
-                                    Lire plus →
-                                </a>
-                            </article>
-                        ))}
-                    </div>
-                </div>
-            </section>
+            <NewsSection />
             <Footer/>
         </div>
     );
