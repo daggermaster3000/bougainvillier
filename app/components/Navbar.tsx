@@ -9,8 +9,7 @@ const navLinks = [
   { name: "Home", href: "/" },
   { name: "Cours", href: "/cours" },
   { name: "Notre Club", href: "/notre-club" },
-  { name: "Gallerie Photos", href: "/gallery" },
-  // Remove Contact from here — handled separately
+  { name: "Galerie Photos", href: "/gallery" },
 ];
 
 export default function Navbar() {
