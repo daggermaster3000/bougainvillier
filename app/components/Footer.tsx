@@ -56,8 +56,19 @@ const Footer = () => {
                 </div>
             </div>
 
-            <div className="text-center text-sm text-gray-500 mt-8">
+            <div className="text-center text-sm text-gray-500 mt-18">
                 © {new Date().getFullYear()} ACTS Crissier – Tous droits réservés.
+            </div>
+            <div className="text-center text-sm text-gray-500 mt-8">
+                <p>
+                🌐 Site web par{" "}
+                <a
+                            href="mailto:daggermaster2000@proton.me"
+                            className="text-[#be4029] hover:underline"
+                        >
+                Qlair Studio
+                </a>
+                </p>
             </div>
         </footer>
     );

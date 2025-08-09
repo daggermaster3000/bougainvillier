@@ -29,7 +29,7 @@ export default function Home() {
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="/cours"
-              className="bg-[#be4029] hover:bg-red-400 px-6 py-3 rounded-full text-gray-900 font-semibold transition"
+              className="bg-[#be4029] hover:bg-red-400 px-6 py-3 rounded-full text-white/90 font-semibold transition"
             >
               Voir les cours
             </a>

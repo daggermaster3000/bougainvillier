@@ -22,7 +22,7 @@ export default function NotreClub() {
 
       {/* Titles */}
       <h1 className="text-4xl font-bold text-center">Notre Club</h1>
-      <h2 className="text-2xl font-semibold text-center text-[#be4029] mb-8">ACTS Taekwondo Crissier</h2>
+      <h2 className="text-4xl font-semibold text-center text-[#be4029] mb-8">ACTS Taekwondo Crissier</h2>
 
       {/* Club Description */}
       <div className="prose max-w-none dark:prose-invert">
@@ -33,11 +33,6 @@ export default function NotreClub() {
           Nos Maîtres de Taekwondo sont formés depuis de nombreuses années à l'Académie Choi Taekwondo Suisse (ACTS) par Maître Choi Yong Deok.
         </p>
 
-        <h3 className="mt-8">Nos Prix</h3>
-        <p>
-          Enfants (jusqu'à 18 ans): CHF. 850.- pour une année ou CHF. 475.- pour 6 mois<br />
-          Adultes: CHF. 950.- pour une année ou CHF. 525.- pour 6 mois
-        </p>
       </div>
 
       {/* Additional Section */}
