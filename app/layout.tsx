@@ -1,5 +1,6 @@
 import './globals.css';
 import { PT_Sans } from 'next/font/google';
+import { Analytics } from "@vercel/analytics/next"
 
 const ptSans = PT_Sans({
   subsets: ['latin'],
@@ -14,6 +15,7 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr">
+      <Analytics/>
       <body className={ptSans.className}>{children}</body>
     </html>
   );
