@@ -11,7 +11,7 @@ export default function NotreClub() {
       {/* Club Image */}
       <div className="flex justify-center">
         <Image
-          src="https://acts-crissier.ch//photo_notre_club.jpg"
+          src="/photo_notre_club.jpg"
           alt="Notre Club Photo"
           width={720}
           height={480}
@@ -86,7 +86,7 @@ export default function NotreClub() {
 
     <div className="flex justify-center mt-12">
       <Image
-        src="https://acts-crissier.ch/photo_tableau_ceinture.jpg"
+        src="/photo_tableau_ceinture.jpg"
         alt="Tableau des ceintures"
         width={600}
         height={400}

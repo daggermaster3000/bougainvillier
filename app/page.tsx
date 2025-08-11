@@ -11,7 +11,7 @@ export default function Home() {
       {/* Hero Section */}
       <div className="relative w-full h-[90vh] flex items-center justify-center text-center">
         <Image
-          src="https://acts-crissier.ch/photo_accueil.jpg"
+          src="/photo_accueil.jpg"
           alt="Taekwondo background"
           fill
           priority
