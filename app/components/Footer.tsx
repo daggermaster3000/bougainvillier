@@ -66,7 +66,7 @@ const Footer = () => {
                             href="mailto:daggermaster2000@proton.me"
                             className="text-[#be4029] hover:underline"
                         >
-                Qlair Studio
+                EQlair Studio
                 </a>
                 </p>
             </div>
