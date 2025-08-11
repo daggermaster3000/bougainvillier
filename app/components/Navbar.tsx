@@ -67,18 +67,34 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile menu - Enhanced */}
       <div
         className={`md:hidden fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-40 transform transition-transform duration-300 ease-in-out ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="p-6 space-y-6 mt-16 text-[#2E2E2E]">
+        <div className="flex items-center justify-between p-6 border-b border-gray-200">
+          <Image
+            src="/ACTS_logo.png"
+            alt="ACTS Taekwondo Logo"
+            width={40}
+            height={40}
+            className="rounded-full object-cover"
+          />
+          <button
+            onClick={() => setIsOpen(false)}
+            className="text-[#2E2E2E]"
+            aria-label="Close menu"
+          >
+            <X size={28} />
+          </button>
+        </div>
+        <div className="p-8 space-y-8 text-[#2E2E2E]">
           {navLinks.map(({ name, href }) => (
             <Link
               key={name}
               href={href}
-              className="block text-lg font-medium hover:underline underline-offset-4 transition duration-200"
+              className="block text-xl font-medium hover:text-blue-600 transition-colors duration-200"
               onClick={() => setIsOpen(false)}
             >
               {name}
@@ -86,7 +102,7 @@ export default function Navbar() {
           ))}
           <button
             onClick={scrollToContact}
-            className="block w-full text-left text-lg font-medium hover:underline underline-offset-4 transition duration-200 bg-transparent border-none p-0"
+            className="block w-full text-left text-xl font-medium hover:text-blue-600 transition-colors duration-200 bg-transparent border-none p-0"
           >
             Contact
           </button>
