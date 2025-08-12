@@ -6,7 +6,7 @@ export default function NotreClub() {
   return (
     <div className="min-h-screen flex flex-col bg-white text-gray-900">
     <Navbar />
-    <section id="about" className="max-w-5xl mx-auto px-6 py-16 space-y-8 text-gray-900">
+    <section id="about" className="justify-center max-w-5xl mx-auto px-6 py-16 space-y-8 text-gray-900">
       
       {/* Club Image */}
       <div className="flex justify-center">
@@ -25,11 +25,10 @@ export default function NotreClub() {
       <h2 className="text-4xl font-semibold text-center text-[#be4029] mb-8">ACTS Taekwondo Crissier</h2>
 
       {/* Club Description */}
-      <div className="prose max-w-none dark:prose-invert">
+      <div className="prose max-w-none dark:prose-invert justify-center text-center">
         <p>
           Depuis 2019, nous nous efforçons d'offrir des cours Taekwondo de qualité pour les enfants et les adultes à Crissier, à la salle de sport du collège de la Carrière.
-        </p>
-        <p>
+
           Nos Maîtres de Taekwondo sont formés depuis de nombreuses années à l'Académie Choi Taekwondo Suisse (ACTS) par Maître Choi Yong Deok.
         </p>
 
@@ -38,12 +37,10 @@ export default function NotreClub() {
       {/* Additional Section */}
 <section
   id="additional-section"
-  className=""
+  className="justify-center text-center"
 >
-  <div className=" mx-auto">
-    <h2 className="text-4xl sm:text-3xl font-extrabold text-center text-[#be4029] mb-12">
-      LE TAEKWONDO
-    </h2>
+  <div className=" mt-20 mx-auto">
+
 
     <article className="prose prose-lg dark:prose-invert max-w-none text-gray-800 space-y-6">
       <h3 className="text-2xl font-semibold text-[#be4029] ">L'HISTOIRE DU TAEKWONDO</h3>

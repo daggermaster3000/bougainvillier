@@ -39,7 +39,7 @@ export default function Gallery() {
       <Navbar />
 
       <section id="gallery" className="max-w-6xl mx-auto px-6 py-16 space-y-8">
-        <h1 className="text-4xl font-bold text-center mb-12">Gallerie Photos</h1>
+        <h1 className="text-4xl font-bold text-center mb-12">Galerie Photos</h1>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {images.map((img, i) => (

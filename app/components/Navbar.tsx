@@ -47,14 +47,14 @@ export default function Navbar() {
               </Link>
             </li>
           ))}
-          <li>
+          {/* <li>
             <button
               onClick={scrollToContact}
               className="hover:underline underline-offset-4 transition duration-200 cursor-pointer bg-transparent border-none p-0 font-semibold text-[#2E2E2E]"
             >
               Contact
             </button>
-          </li>
+          </li> */}
         </ul>
 
         {/* Hamburger icon */}
@@ -100,12 +100,12 @@ export default function Navbar() {
               {name}
             </Link>
           ))}
-          <button
+          {/* <button
             onClick={scrollToContact}
             className="block w-full text-left text-xl font-medium hover:text-blue-600 transition-colors duration-200 bg-transparent border-none p-0"
           >
             Contact
-          </button>
+          </button> */}
         </div>
       </div>
 
