@@ -16,14 +16,17 @@ export default defineType({
       type: 'text',
     }),
     defineField({
-      name: 'link',
-      title: 'Read More Link',
-      type: 'url',
-    }),
-    defineField({
       name: 'publishedAt',
       title: 'Published At',
       type: 'datetime',
+    }),
+    defineField({
+      name: 'image',
+      title: 'Image',
+      type: 'image',
+      options: {
+        hotspot: true, // allows cropping/focus
+      }
     }),
   ],
 })

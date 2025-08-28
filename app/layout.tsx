@@ -1,18 +1,19 @@
 import './globals.css';
-import { PT_Sans } from 'next/font/google';
+
 import { Analytics } from "@vercel/analytics/next"
 import type { Metadata } from 'next';
+import localFont from 'next/font/local'
+ 
+const myFont = localFont({
+  src: '../public/GreatVibes-Wmr4.ttf',
+})
 
-const ptSans = PT_Sans({
-  subsets: ['latin'],
-  weight: ['400', '700'], // Normal and bold
-});
 
 export const metadata: Metadata = {
-  title: 'ACTS Taekwondo Crissier',
+  title: 'Bougainvillier',
   description: 'Le site officiel d\'ACTS Taekwondo Crissier. Rejoignez-nous et apprenez les techniques du Taekwondo.',
   openGraph: {
-    title: 'ACTS Taekwondo Crissier',
+    title: 'Bougainvillier',
     description: 'Le site officiel d\'ACTS Taekwondo Crissier.',
     url: 'https://acts-crissier.ch',
     siteName: 'ACTS Taekwondo',
@@ -33,7 +34,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="fr">
       <Analytics/>
-      <body className={ptSans.className}>{children}</body>
+      <body className='' >{children}</body>
     </html>
   );
 }

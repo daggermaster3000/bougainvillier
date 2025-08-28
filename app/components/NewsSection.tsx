@@ -2,6 +2,12 @@
 
 import { useEffect, useState } from 'react'
 import { sanityClient } from '../lib/sanity'
+import imageUrlBuilder from '@sanity/image-url'
+import localFont from 'next/font/local'
+
+const myFont = localFont({
+  src: '../../public/GreatVibes-Wmr4.ttf',
+})
 
 type NewsItem = {
   _id: string
@@ -9,6 +15,13 @@ type NewsItem = {
   summary: string
   link: string
   publishedAt: string
+  image?: { asset: { _ref: string } } // optional image field
+}
+
+// Build image URLs
+const builder = imageUrlBuilder(sanityClient)
+function urlFor(source: any) {
+  return builder.image(source)
 }
 
 function getRelativeTime(dateString: string) {
@@ -35,7 +48,6 @@ function getRelativeTime(dateString: string) {
   return "just now";
 }
 
-
 export default function NewsSection() {
   const [news, setNews] = useState<NewsItem[]>([])
 
@@ -43,7 +55,7 @@ export default function NewsSection() {
     sanityClient
       .fetch(
         `*[_type == "newsItem"] | order(publishedAt desc)[0...3]{
-          _id, title, summary, link, publishedAt
+          _id, title, summary, link, publishedAt, image
         }`
       )
       .then(setNews)
@@ -52,21 +64,30 @@ export default function NewsSection() {
   return (
     <section className="bg-white text-gray-900 py-16 px-6" id="news">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12">
-          Actualités
-        </h2>
+        <div className={myFont.className}>
+          <h2 className="text-6xl text-gray-800 font-bold text-center mb-12">Actualités</h2>
+        </div>
+
         <div className="grid md:grid-cols-3 gap-8">
           {news.map((item) => (
             <article
               key={item._id}
-              className="bg-gray-100 rounded-xl shadow-md p-6 hover:shadow-lg transition"
+              className="rounded-xl shadow-md p-6 hover:shadow-lg transition"
             >
-                  <h3 className="text-xl font-semibold mb-1">{item.title}</h3>
-                  <p className="text-sm text-gray-400 mb-2">
-                      {getRelativeTime(item.publishedAt)}
-                  </p>
+              {/* Render image if it exists */}
+              {item.image && (
+                <img
+                  src={urlFor(item.image).width(600).height(400).url()}
+                  alt={item.title}
+                  className="w-full h-48 object-cover rounded-md mb-4"
+                />
+              )}
+
+              <h3 className="text-xl font-semibold mb-1">{item.title}</h3>
+              <p className="text-sm text-gray-400 mb-2">{getRelativeTime(item.publishedAt)}</p>
               <p className="text-sm text-gray-700">{item.summary}</p>
-              
+
+              {/* Optional link */}
               {/* <a
                 href={item.link}
                 className="inline-block mt-4 text-blue-500 hover:underline font-medium"
